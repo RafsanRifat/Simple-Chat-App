@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
+    "channels",
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # Custom apps
     'chat',
 ]
+
+ASGI_APPLICATION = "ChatApp.asgi.application"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
