@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 
 # Create your views here.
+from chat.models import Message
+
 
 def lobby(request):
     return render(request, 'chat/lobby.html')
