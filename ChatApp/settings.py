@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +39,6 @@ INSTALLED_APPS = [
 
     # Custom apps
     'chat',
-    'channels',
 ]
 
 MIDDLEWARE = [
@@ -73,11 +73,8 @@ WSGI_APPLICATION = 'ChatApp.wsgi.application'
 ASGI_APPLICATION = 'ChatApp.asgi.application'
 
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            'hosts': [('localhost:8000')],
-        }
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
     }
 }
 
